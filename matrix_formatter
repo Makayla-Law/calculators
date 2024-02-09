@@ -1,0 +1,18 @@
+### Formatting two matrices for multiplication
+
+def format_matrices(m1, m2):
+    m1_rows = m1.split(';')
+    m1_dict = {}
+    for i in range(len(m1_rows)):
+        m1_dict[str(i+1)] = m1_rows[i].split(',')
+        
+    m2_rows = m2.split(';')
+    m2_list_list = []
+    for i in range(len(m2_rows)):
+        m2_list_list.append(m2_rows[i].split(','))
+    m2_dict = {}
+    for j in range(len(m2_rows)-1):
+        m2_dict[str((j+1))] = [i[(j)] for i in m2_list_list]
+    m2_dict
+    
+    return m1_dict, m2_dict
