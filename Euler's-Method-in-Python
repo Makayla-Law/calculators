@@ -1,0 +1,23 @@
+#A script that computes the approximate value of y-sub n using euler's method. Currently can be customized somewhat(step size, function, n), but I hope to add more flexibility in the future.
+
+def main_func(n, step, d_func): #where n is a float or int, step is a float or int, and d_func is some differential function
+    y = 1
+    x = 1
+    new_y = 1
+    while x<= n:
+        new_y = y + (step*(d_func(x,y)))
+        x += step
+        y = new_y
+        print('y of',x, '=',new_y)
+
+
+def d_function(x, y):
+    return 3*y + 2*x*y
+
+main_func(1.5, 0.1, d_function)
+
+#output should be: y of 1.1 = 1.5
+#                  y of 1.200 = 2.2800000000000002
+#                  y of 1.300 = 3.5112000000000005
+#                  y of 1.400 = 5.4774720000000015
+#                  y of 1.500 = 8.654405760000003
